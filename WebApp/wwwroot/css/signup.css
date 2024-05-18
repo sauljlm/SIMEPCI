@@ -1,0 +1,164 @@
+﻿body {
+    background-color: #B9D6F2;
+}
+
+.btn-sign-up-primary {
+    background-color: #0353A4;
+    color: #fff;
+}
+
+.btn-sign-up-secondary {
+    background-color: #ECEFF1;
+}
+
+.btn-sign-up-primary:hover {
+    background-color: #fff;
+    color: #000;
+    border: solid 1px #000;
+}
+
+.btn-sign-up-secondary:hover {
+    border: solid 1px #000;
+}
+
+.crumbs-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.crumb {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+    color: #000;
+    background-color: #B9D6F2;
+}
+
+.crumb-active {
+    background-color: #0353A4;
+    color: #fff;
+}
+
+.crumb::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #B9D6F2;
+    top: 50%;
+    left: 68%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.crumb-active::before {
+    background-color: #0353A4;
+}
+
+.crumb:last-child::before {
+    display: none;
+}
+
+.GeneralBox {
+    width: 50%;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.input-sign-up-group input {
+    background-color: rgba(3, 83, 164, 0.2);
+}
+
+.input-sign-up-group select {
+    background-color: rgba(3, 83, 164, 0.2);
+}
+
+.input-sign-up-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+
+.input-error {
+    background-color: #FFF4F4 !important;
+    box-shadow: 0px 0px 5px red;
+    border-color: red;
+}
+
+.sign-up-column {
+    width: 80%;
+}
+
+.padlockIcon {
+    width: 125px;
+    height: 125px;
+}
+
+.tipo-btn {
+    background-color: #fff;
+    border-radius: 10%;
+    padding: 25px 35px 40px 35px;
+    position: relative;
+}
+
+.tipo-container {
+    background-color: #0353A420;
+    border-radius: 10px;
+    padding: 20px 0;
+    width: 78%;
+}
+
+.selected {
+    border: 2px solid #0353A4;
+}
+
+.tipo-paciente::before {
+    content: "Paciente";
+    position: absolute;
+    top: 60%;
+    left: 22%;
+    z-index: 1;
+    cursor:pointer;
+}
+
+.tipo-doctor::before {
+    content: "Doctor";
+    position: absolute;
+    top: 60%;
+    left: 29%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.tipo-enfermera::before {
+    content: "Enfermero";
+    position: absolute;
+    top: 60%;
+    left: 17%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.tipo-secretaria::before {
+    content: "Secretario";
+    position: absolute;
+    top: 60%;
+    left: 20%;
+    z-index: 1;
+    cursor: pointer;
+}

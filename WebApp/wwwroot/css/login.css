@@ -1,0 +1,205 @@
+﻿body {
+    background-color: #B9D6F2;
+}
+
+.ImgBackground{
+    position:absolute;
+    bottom:0;
+    left:0;
+}
+
+.GeneralBox {
+    min-width: 250px;
+    width: 23%;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 20px;
+    position:relative;
+}
+
+.font-weight-light{
+    font-weight:200;
+}
+
+.IconUser {
+    stroke: #0353A4;
+    width: 90px;
+    height: 90px;
+    margin-top:20px;
+}
+
+.IconInput {
+    width: 25px;
+    height: 25px;
+}
+
+.Linedeco {
+    display: block;
+    content: "";
+    background-color: #0353A4;
+    height:3px;
+    width:50px;
+}
+
+.ODeco {
+    margin: 0 20px;
+    color: #0353A4;
+    font-weight:800;
+}
+
+.form-control {
+    background-color: #CDDDED !important;
+    border: none !important;
+}
+
+.input-group-text {
+    background-color: #CDDDED !important;
+    border-radius: initial !important;
+    border: none !important;
+    border-bottom-left-radius: 0.375rem !important;
+    border-top-left-radius: 0.375rem !important;
+    padding-right: 2px !important;
+}
+
+.ForgotPassword {
+    font-weight: 100;
+    cursor:pointer;
+}
+
+.IniciarButton {
+    background-color: #0353A4 !important;
+    background-image: none !important;
+}
+
+    .IniciarButton:hover {
+        background-color: #0E7DED !important;
+    }
+
+.LinkRegis {
+    text-decoration: none;
+    color: #061A40;
+    font-weight:600
+}
+
+.backicon {
+    width: 20px;
+    stroke: #061A40;
+}
+
+#BackButton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color:white;
+    border:none;
+}
+
+.input-invalid {
+    background-color: #FFF4F4 !important;
+    box-shadow: 0px 0px 5px red;
+    border-color: red;
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+   
+.LoadPage {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    background: #000000a6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    justify-content: center;
+}
+
+
+.loader {
+    transform: rotateZ(45deg);
+    perspective: 1000px;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    color: #fff;
+}
+
+    .loader:before,
+    .loader:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: inherit;
+        height: inherit;
+        border-radius: 50%;
+        transform: rotateX(70deg);
+        animation: 1s spin linear infinite;
+    }
+
+    .loader:after {
+        color: #0353a4;
+        transform: rotateY(70deg);
+        animation-delay: .4s;
+    }
+
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotateZ(360deg);
+    }
+}
+
+@keyframes rotateccw {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+@keyframes spin {
+    0%, 100% {
+        box-shadow: .2em 0px 0 0px currentcolor;
+    }
+
+    12% {
+        box-shadow: .2em .2em 0 0 currentcolor;
+    }
+
+    25% {
+        box-shadow: 0 .2em 0 0px currentcolor;
+    }
+
+    37% {
+        box-shadow: -.2em .2em 0 0 currentcolor;
+    }
+
+    50% {
+        box-shadow: -.2em 0 0 0 currentcolor;
+    }
+
+    62% {
+        box-shadow: -.2em -.2em 0 0 currentcolor;
+    }
+
+    75% {
+        box-shadow: 0px -.2em 0 0 currentcolor;
+    }
+
+    87% {
+        box-shadow: .2em -.2em 0 0 currentcolor;
+    }
+}

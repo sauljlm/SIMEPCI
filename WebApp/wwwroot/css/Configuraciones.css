@@ -1,0 +1,14 @@
+﻿#txtIdentificacion,
+#txtNombre,
+#txtApellidoUno,
+#txtApellidoDos,
+#txtTelefono,
+#txtCorreo,
+#slctSexo,
+#txtFechaNacimiento,
+#txtFoto,
+#txtLatitud,
+#txtLongitud {
+    background-color: rgba(3, 83, 164, 0.2);
+    border-radius: 10px;
+}

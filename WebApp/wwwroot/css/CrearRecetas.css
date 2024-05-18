@@ -1,0 +1,187 @@
+﻿#formRegistro {
+    height: 70vh;
+}
+
+#tblCitas thead tr th {
+    background-color: #0353A4;
+    color: white;
+}
+
+#btnAdelante {
+    background-color: #0353A4;
+    color: white;
+    border-radius: 5px;
+    height: 38px;
+    width: 38px;
+    margin-top: 1px;
+    border: none;
+}
+
+#txtIdCita, #txtMedicamento, #txtDosificacion, #txtIndicaciones {
+    background-color: #ccdded;
+    border: none;
+}
+
+#btnCrear {
+    background-color: #0353A4;
+    color: white;
+    border-radius: 5px;
+    height: 40px;
+    width: 88px;
+    border: none;
+}
+
+#btnRecetaImagen {
+    background-color: #0353A4;
+    color: white;
+    border-radius: 5px;
+    height: 40px;
+    width: 150px;
+    border: none;
+    margin-left: 12px;
+}
+
+#btnAtras {
+    background-color: #0353A4;
+    color: white;
+    border-radius: 5px;
+    height: 38px;
+    width: 38px;
+    border: none;
+    margin-right: 13px;
+}
+
+#btnCrearImagen {
+    background-color: #0353A4;
+    color: white;
+    border-radius: 5px;
+    height: 40px;
+    width: 88px;
+    border: none;
+}
+
+#btnAtrasImagen {
+    background-color: #0353A4;
+    color: white;
+    border-radius: 5px;
+    height: 38px;
+    width: 38px;
+    border: none;
+}
+
+.input-error {
+    background-color: #FFF4F4 !important;
+    box-shadow: 0px 0px 5px red;
+    border-color: red;
+}
+
+/* A partir de aqui son los estilos de las imagenes */
+.file-upload {
+    background-color: #ffffff;
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.file-upload-btn {
+    width: 100%;
+    margin: 0;
+    color: #fff;
+    background: #0353A4;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    transition: all .2s ease;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+    .file-upload-btn:hover {
+        background: #236ab0;
+        color: #ffffff;
+        transition: all .2s ease;
+        cursor: pointer;
+    }
+
+    .file-upload-btn:active {
+        border: 0;
+        transition: all .2s ease;
+    }
+
+.file-upload-content {
+    display: none;
+    text-align: center;
+}
+
+.file-upload-input {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.image-upload-wrap {
+    margin-top: 20px;
+    border: 4px dashed #0353A4;
+    position: relative;
+}
+
+    .image-dropping,
+    .image-upload-wrap:hover {
+        background-color: #0353A4;
+        border: 4px dashed #ffffff;
+    }
+
+.image-title-wrap {
+    padding: 0 15px 15px 15px;
+    color: #222;
+}
+
+.drag-text {
+    text-align: center;
+}
+
+    .drag-text h3 {
+        font-weight: 100;
+        text-transform: uppercase;
+        color: #236ab0;
+        padding: 60px 0;
+    }
+
+.file-upload-image {
+    max-height: 200px;
+    max-width: 200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.remove-image {
+    width: 200px;
+    margin: 0;
+    color: #fff;
+    background: #f27474;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    transition: all .2s ease;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+    .remove-image:hover {
+        background: #f27474;
+        color: #ffffff;
+        transition: all .2s ease;
+        cursor: pointer;
+    }
+
+    .remove-image:active {
+        border: 0;
+        transition: all .2s ease;
+    }

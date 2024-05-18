@@ -1,0 +1,81 @@
+﻿footer.footer {
+    position: inherit !important;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9fa; 
+    border-top: 1px solid #dee2e6; 
+    padding: 10px 0; 
+}
+
+.card-body {
+    background-color: #ffffff; 
+    border-radius: 10px;
+}
+
+
+.card-body {
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+#tarjeta {
+    color: #0353A4;
+}
+
+.table-responsive {
+    overflow-y: auto;
+    max-height: 350px;
+}
+
+
+#txtId, #txtIdentificacion, #txtNombre, #txtApellidoUno, #txtApellidoDos,
+#txtTelefono, #txtCorreo, #slctSexo, #txtFechaNacimiento, #txtLatitud,
+#txtLongitud, #txtFoto, #slctTipo, #txtEspecialidad, #txtIdSede, #slctEstado, #slctValidacion, #txtContrasenna, #slctSede {
+    background-color: rgba(3, 83, 164, 0.2);
+    border-radius: 10px;
+}
+
+.form-control-file::file-selector-button {
+    background-color: dimgrey;
+    color: white;
+    border: 1px solid #0353A4;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.form-control-file:hover::file-selector-button {
+    background-color: white;
+    color: #0353A4;
+    border-color: #024182;
+}
+
+#btnUpdate, #btnDelete {
+    background-color: #0353A4;
+    color: white;
+    border: 1px solid #0353A4;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+#btnUpdate:hover,
+#btnDelete:hover {
+    background-color: white;
+    color: #0353A4;
+    border-color: #0353A4;
+}
+
+#tblUsuario thead th {
+    background-color: #0353A4;
+    color: white;
+}
+
+.botonFlecha {
+    background-color: #0353A4;
+    color: white;
+    border-radius: 5px;
+    height: 38px;
+    width: 38px;
+    margin-top: 1px;
+}

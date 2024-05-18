@@ -1,0 +1,21 @@
+﻿#CambiarContra {
+    margin-top:10px;
+    background-color: #0353A4;
+    color: white;
+    border: 1px solid #0353A4;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+#CambiarContra:hover {
+    background-color: white;
+    color: #0353A4;
+    border-color: #0353A4;
+}
+
+#PerfilImagen {
+    width:150px;
+    height: 150px;
+    border-radius: 50%;
+}

@@ -1,0 +1,160 @@
+﻿@page
+@model WebApp.Pages.RecetasModel
+@{
+}
+<link href="~/css/recetas.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
+<script src="~/js/pages/recetas.js"></script>
+
+
+<fieldset>
+    <h1>Recetas</h1>
+    <!-- Carga recetas del usuario -->
+    <div id="recetas" class="row"></div>
+    <button id="btnAtras" class="botonFlecha" type="button">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div id="tarjeta">
+                    <!-- data table -->
+                    <div class="card-body" id="usuarios1">
+                        <div class="row mt-4">
+                            <legend>Lista de Usuarios</legend>
+                            <div class="col-lg-12">
+                                <table id="tblUsuario" class="display table table-striped table-bordered" style="width: 100%">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" style="color: #0353A4;"></th>
+                                            <th scope="col">Id</th>
+                                            <th scope="col">IdPaciente</th>
+                                            <th scope="col">Identificacion</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Apellido Uno</th>
+                                            <th scope="col">Apellido Dos</th>
+                                            <th scope="col">Telefono</th>
+                                            <th scope="col">Correo</th>
+                                            <th scope="col">Sexo</th>
+                                            <th scope="col">FechaNacimiento</th>
+                                            <th scope="col">Latitud</th>
+                                            <th scope="col">Longitud</th>
+                                            <th scope="col">Antecedentes</th>
+                                            <th scope="col">EnfermedadesFamiliares</th>
+                                            <th scope="col">HabitosNoSaludables</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="atras mt-3">
+                            <button id="btnFlechaSiguiente" type="button" class="botonFlecha text-center">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- data table -->
+        <div class="card-body" id="editarRecetas">
+            <form class="d-flex justify-content-center align-items-center">
+                <div class="row justify-content-center align-items-center">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="txtIdReceta">Cita</label>
+                                    <input type="text" class="form-control" id="txtIdReceta" placeholder="Selecciona id de la cita" readonly>
+                                    <input type="text" class="form-control" id="txtIdCita" placeholder="Selecciona id de la cita" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="txtMedicamento">Medicamento</label>
+                                    <input type="text" class="form-control" id="txtMedicamento" placeholder="Digite el medicamento">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="txtDosificacion">Dosificación</label>
+                                    <input type="number" class="form-control" id="txtDosificacion" placeholder="Digite la dosificación">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="txtIndicaciones">Indicaciones</label>
+                                    <input type="text" class="form-control" id="txtIndicaciones" placeholder="Digite las indicaciones">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 d-flex justify-content-end">
+                            <div class="form-group">
+                                <button id="btnActualizar" type="button">Actualizar</button>
+                                <button id="btnEliminar" type="button">Eliminar</button>
+                            </div>
+                            <div class="form-group">
+                                <button id="btnAtrasEditar" class="ms-1" type="button">
+                                    <i class="fas fa-arrow-left"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+        <!-- data table -->
+        <div class="card-body" id="verRecetasImagen">
+                <div class="row justify-content-center align-items-center">
+                    <div class="row justify-content-center align-items-center">
+                        <img class="imgRecetaMedica" src="#" alt="Imagen de receta médica" style="width:100%; height:100%" />
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 d-flex justify-content-end">
+                            <div class="form-group">
+                                <button id="btnEliminarRecetaImagen" type="button">Eliminar</button>
+                            </div>
+                            <div class="form-group">
+                                <button id="btnAtrasRecetaImagen" class="ms-1" type="button">
+                                    <i class="fas fa-arrow-left"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

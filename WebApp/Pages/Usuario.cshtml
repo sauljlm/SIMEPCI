@@ -1,0 +1,263 @@
+﻿@page
+@model WebApp.Pages.UsuarioModel
+@{
+}
+<link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
+
+<!-- DataTables Buttons CSS y JavaScript -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.3.0/css/buttons.dataTables.min.css">
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.0/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.2.2/jszip.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.0/js/buttons.html5.min.js"></script>
+
+<link href="~/css/usuario.css" rel="stylesheet" />
+<script src="~/js/pages/usuario.js"></script>
+
+<!-- Incluir el API de Google Maps -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=SUKEYDEAPIAQUI8&callback=initMap"></script>
+
+<h1>Usuario</h1>
+
+<body class="bodySede">
+    <form id="formRegistro">
+        <fieldset>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div id="tarjeta">
+                            <!-- data table -->
+                            <div class="card-body" id="usuarios1">
+                                <div class="row mt-4">
+                                    <div class="col-lg-12">
+                                        <table id="tblUsuario" class="display table table-striped table-bordered" style="width: 100%">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col" style="background-color: #0353A4;color: #0353A4;"></th>
+                                                    <th scope="col" style="background-color: #0353A4;color: white;">Id</th>
+                                                    <th scope="col" style="background-color: #0353A4;color: white;">Identificacion</th>
+                                                    <th scope="col" style="background-color: #0353A4;color: white;">Nombre</th>
+                                                    <th scope="col" style="background-color: #0353A4;color: white;">Apellido Uno</th>
+                                                    <th scope="col" style="background-color: #0353A4;color: white;">Apellido Dos</th>
+                                                    <th scope="col" style="background-color: #0353A4;color: white;">Telefono</th>
+                                                    <th scope="col" style="background-color: #0353A4;color: white;">Correo</th>
+                                                    <th scope="col" style="background-color: #0353A4;color: white;">Sexo</th>
+                                                    <th scope="col" style="background-color: #0353A4;color: white;">FechaNacimiento</th>
+                                                    <th scope="col" style="background-color: #0353A4;color: white;">Latitud</th>
+                                                    <th scope="col" style="background-color: #0353A4;color: white;">Longitud</th>
+                                                    <th scope="col" style="background-color: #0353A4;color: white;">FotoPerfil</th>
+                                                    <th scope="col" style="background-color: #0353A4;color: white;">Estado</th>
+                                                    <th scope="col" style="background-color: #0353A4;color: white;">ValidacionPerfil</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="atras mt-3">
+                                    <button id="btnFlechaSiguiente" type="button" class="botonFlecha" onclick="mostrarusuarios2()">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Input de info -->
+                            <!-- Primera Columna -->
+                            <div class="card-body" id="usuarios2">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group" style="display: none;>
+                                                        <label for="txtId">Id</label>
+                                                        <input type="text" class="form-control" id="txtId" placeholder="Id" required readonly>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">                                                
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="txtIdentificacion">Identificación</label>
+                                                        <input type="text" class="form-control" id="txtIdentificacion" placeholder="Ingrese la identificacion" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="txtNombre">Nombre</label>
+                                                        <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese el nombre">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="txtApellidoUno">Primer Apellido</label>
+                                                        <input type="text" class="form-control" id="txtApellidoUno" placeholder="Ingrese el apellido 1" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="txtApellidoDos">Segundo Apellido</label>
+                                                        <input type="text" class="form-control" id="txtApellidoDos" placeholder="Ingrese el apellido 2">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="txtTelefono">Teléfono</label>
+                                                        <input type="tel" class="form-control" id="txtTelefono" placeholder="Ingrese el telefono">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="txtCorreo">Correo</label>
+                                                        <input type="text" class="form-control" id="txtCorreo" placeholder="Ingresa el correo" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="slctSexo">Sexo</label>
+                                                        <select id="slctSexo" class="form-control" required>
+                                                            <option value="">Elije el sexo</option>
+                                                            <option value="M">Masculino</option>
+                                                            <option value="F">Femenino</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="txtFechaNacimiento">Fecha Nacimiento</label>
+                                                        <input type="date" class="form-control" id="txtFechaNacimiento" placeholder="Ingrese la fecha de nacimiento" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="form-group">
+                                                            <label for="slctTipo">Tipo Usuario</label>
+                                                            <select id="slctTipo" placeholder="Tipo de usuario" aria-label="Tipo de usuario" class="form-control" aria-describedby="basic-addon1" required>
+                                                                <option value="">Selecciona el tipo de usuario</option>
+                                                                <option value="Paciente">Paciente</option>
+                                                                <option value="Doctor">Doctor</option>
+                                                                <option value="Enfermero">Enfermero</option>
+                                                                <option value="Secretario">Secretario</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="txtIdSede">Sede</label>
+                                                        <select id="slctSede" placeholder="Tipo de usuario" aria-label="Tipo de usuario" class="form-control" aria-describedby="basic-addon1" required>
+                                                            <option value="">Seleccionar sede</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="txtFoto">Foto Usuario </label>
+                                                        <input type="file" class="form-control-file" id="txtFoto">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Segunda Columna -->
+                                        <div class="col-md-6">
+                                            <div class="form-group mt-1">
+                                                <label for="map">Selecciona la ubicación en el mapa:</label>
+                                                <div id="map" style="height: 205px; border-radius: 10px;"></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="txtLatitud">Latitud</label>
+                                                        <input type="text" class="form-control" id="txtLatitud" placeholder="Ingresa la latitud" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="txtLongitud">Longitud</label>
+                                                        <input type="text" class="form-control" id="txtLongitud" placeholder="Ingresa la longitud" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label for="txtEstado">Estado</label>
+                                                    <select id="slctEstado" class="form-control" required>
+                                                        <option value="">Elije el estado</option>
+                                                        <option value="AC">Activo</option>
+                                                        <option value="IN">Inactivo</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="txtValidacion">Validación de perfil</label>
+                                                    <select id="slctValidacion" class="form-control" required>
+                                                        <option value="">Elige el estado del perfil</option>
+                                                        <option value="AP">Aprobado</option>
+                                                        <option value="DE">Desaprobado</option>
+                                                        <option value="IN">Inactivo</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group mt-3">
+                                                        <div class="form-group d-none" id="contenedor-especialidad">
+                                                            <label for="txtEspecialidad">Especialidad</label>
+                                                            <input type="text" class="form-control" id="txtEspecialidad" placeholder="Ingrese la Especialidad" required>
+                                                        </div>
+                                                    </div>
+                                                </div>                                               
+                                            </div>
+                                         
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 d-flex justify-content-end">
+                                                <div class="form-group">
+                                                    <button id="btnUpdate" type="button">Actualizar</button>
+                                                </div>
+                                                <div class="form-group">
+                                                    <button type="button" class="botonFlecha ms-1" onclick="mostrarusuarios1()">
+                                                        <i class="fas fa-arrow-left"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

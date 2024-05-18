@@ -1,0 +1,121 @@
+﻿footer.footer {
+    position: inherit !important;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9fa; 
+    border-top: 1px solid #dee2e6; 
+    padding: 10px 0; 
+}
+
+.card-body {
+    background-color: #ffffff; 
+    border-radius: 10px;
+}
+
+
+.card-body {
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+#tarjeta {
+    color: #0353A4;
+}
+
+.table-responsive {
+    overflow-y: auto;
+    max-height: 350px;
+}
+
+
+#txtId, #txtIdentificacion, #txtNombre, #txtApellidoUno, #txtApellidoDos,
+#txtTelefono, #txtCorreo, #slctSexo, #txtFechaNacimiento, #txtLatitud,
+#txtLongitud, #txtFoto, #slctTipo, #txtEspecialidad, #txtIdSede, #slctEstado, #slctValidacion, #txtContrasenna, #slctSede {
+    background-color: rgba(3, 83, 164, 0.2);
+    border-radius: 10px;
+}
+
+.form-control-file::file-selector-button {
+    background-color: dimgrey;
+    color: white;
+    border: 1px solid #0353A4;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.form-control-file:hover::file-selector-button {
+    background-color: white;
+    color: #0353A4;
+    border-color: #024182;
+}
+
+#btnUpdate, #btnDelete {
+    background-color: #0353A4;
+    color: white;
+    border: 1px solid #0353A4;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+#btnUpdate:hover,
+#btnDelete:hover {
+    background-color: white;
+    color: #0353A4;
+    border-color: #0353A4;
+}
+
+#tblUsuario thead th {
+    background-color: #0353A4;
+    color: white;
+}
+
+.botonFlecha {
+    background-color: #0353A4;
+    color: white;
+    border-radius: 5px;
+    height: 40px;
+    width: 38px;
+    margin-top: 1px;
+}
+
+/* Estilos para el botón principal del menú desplegable */
+.dt-button.buttons-collection {
+    background-color: #0353A4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 38px;
+    width: 120px;
+    font-weight: bold;
+}
+
+.dt-button.buttons-collection:hover {
+    background-color: #0353A4 !important;
+}
+
+    /* Estilos para la flecha hacia abajo en el botón del menú desplegable */
+    .dt-button.buttons-collection .dt-down-arrow {
+        color: white;
+    }
+
+
+/* Estilos para el contenedor del menú de botones */
+div.dt-button-collection {
+    background-color: #0353A4; /* Color de fondo del menú de botones */
+    border-radius: 5px; /* Radio de borde del menú de botones */
+}
+
+    /* Estilos para los botones dentro del menú de botones */
+    div.dt-button-collection button {
+        color: white;
+        border: none;
+        border-radius: 0;
+        padding: 8px 12px;
+    }
+
+        /* Estilos para los botones al pasar el mouse (hover) */
+        div.dt-button-collection button:hover {
+            border: none !important; /* Agregar borde blanco al pasar el mouse */
+        }

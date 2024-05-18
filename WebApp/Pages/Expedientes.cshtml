@@ -1,0 +1,654 @@
+﻿@page
+@model WebApp.Pages.ExpedienteModel
+@{
+}
+<!--Insert de Data Table-->
+<link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
+<link href="~/css/expediente.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
+<script src="~/js/pages/expedientes.js"></script>
+
+<h1>Expedientes</h1>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-11">
+            <div class="tarjeta">
+                <!-- data table Expedientes-->
+                <div class="card-body" id="cardTblExpedientes">
+                    <div class="row">
+                        <div class="col-lg-12 p-5">
+                            <table id="tblExpedientes" class="display table table-striped table-bordered" style="width: 100%">
+                                <thead>
+                                    <tr>
+                                        <th>Identificacion</th>
+                                        <th>Nombre</th>
+                                        <th>Primer Apellido</th>
+                                        <th>Segundo Apellido</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="form-group d-flex justify-content-center">
+                        <button id="btnSelect" class="btnSIMEPCI" type="button" style="margin-right: 10px">Seleccionar</button>
+                    </div>
+
+                </div>
+                <!--Expedientes-->
+                <div class="card-body" id="cardExpedientes">
+                    <form id="formExpediente">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtIdentificacion">Identificacion</label>
+                                            <input type="text" class="inputSIMEPCI form-control" id="txtIdentificacion" placeholder="Identificacion" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtNombre">Nombre</label>
+                                            <input type="text" class="form-control inputSIMEPCI" id="txtNombre" placeholder="Nombre" readonly />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtApellidoUno">Primer Apellido</label>
+                                            <input type="text" class="form-control inputSIMEPCI" id="txtApellidoUno" placeholder="Primer Apellido" readonly />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtApellidoDos">Segundo Apellido</label>
+                                            <input type="text" class="form-control inputSIMEPCI" id="txtApellidoDos" placeholder="Segundo Apellido" readonly />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtCorreo">Correo</label>
+                                            <input type="email" class="form-control inputSIMEPCI" id="txtCorreo" placeholder="Correo" readonly />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtTelefono">Telefono</label>
+                                            <input type="number" class="form-control inputSIMEPCI" id="txtTelefono" placeholder="Telefono" readonly />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtSexo">Sexo</label>
+                                            <input type="text" class="form-control inputSIMEPCI" id="txtSexo" placeholder="Sexo" readonly />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtFechaNacimiento">Fecha de Nacimiento</label>
+                                            <input type="date" class="form-control inputSIMEPCI" id="txtFechaNacimiento" placeholder="Fecha de Nacimiento" readonly />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="display: none">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtLatitud">Latitud</label>
+                                            <input type="number" class="form-control inputSIMEPCI" id="txtLatitud" placeholder="Latitud" readonly />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtLongitud">Longitud</label>
+                                            <input type="number" class="form-control inputSIMEPCI" id="txtLongitud" placeholder="Longitud" readonly />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-flex align-content-center">
+                                <div class="container">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="accordion" id="accordionExpedientes" style="background-color:#deecfa;">
+                                                <!--Historia Clinica-->
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="headingOne">
+                                                        <button id="btnHistoriaClinica" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="color:dimgrey;">
+                                                            Historia Clínica
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExpedientes">
+                                                        <div id="txtHistoriaClinica" class="accordion-body" style="color:dimgrey;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <button id="btnExamenesMedicos" class="btnSIMEPCI mt-5" style="height:40px; width:195px" type="button">Exámenes Médicos</button>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <button id="btnRegistroCitas" class="btnSIMEPCI mt-5" style="height:40px; width:195px" type="button">Registro de Citas</button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <button id="btnNotasEnfermeria" class="btnSIMEPCI mt-5" style="height:40px; width:195px" type="button">Notas de Enfermería</button>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <button id="btnNotasMedicas" class="btnSIMEPCI mt-5" style="height:40px; width:195px" type="button">Notas Médicas</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="text-left mt-2">
+                            <button id="btnVolverExpediente" class="botonFlecha" type="button" tabindex="0"><i class="fas fa-arrow-left"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--ExamenesMedicos-->
+                <div class="card-body" id="cardExamenesMedicos">
+                    <p style="font-size:26px" class="mb-3">Exámenes Médicos</p>
+                    <form id="formExamenMedico">
+                        <div class="row">
+                            <div class="col-md-6 mt-4">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="slctNombreDoctor">Nombre del Doctor</label>
+                                            <select class="form-select me-2 border-2 selectSIMEPCI" id="slctNombreDoctor">
+                                                <option value="-1"> Selecciona al Especialista </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtTipo">Tipo</label>
+                                            <input type="text" class="form-control inputSIMEPCI" id="txtTipo" placeholder="Tipo" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtResultado">Resultado</label>
+                                            <input type="text" class="form-control inputSIMEPCI" id="txtResultado" placeholder="Resultado" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="slctInterno">¿Examen Interno?</label>
+                                            <select class="form-select me-2 border-2 selectSIMEPCI" id="slctInterno">
+                                                <option value="11"> Selecciona una opción </option>
+                                                <option value="1"> Sí</option>
+                                                <option value="2"> No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group mt-3">
+                                            <button id="btnAgregarExamenesMedicos" class="btnSIMEPCI" type="button" style="margin-right: 10px">Agregar</button>
+                                            <button id="btnExamenesMedicosImagen" class="btnSIMEPCI" type="button" style="margin-right: 10px">Agregar imagen</button>
+                                            <button id="btnActualizarExamenesMedicos" class="btnSIMEPCI" type="button" style="margin-right: 10px">Actualizar</button>
+                                            <button id="btnEliminarExamenesMedicos" class="btnSIMEPCI mt-4" type="button" style="margin-right: 10px">Eliminar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <!-- data table ExamenesMedicos-->
+                                <div class="col-lg-12">
+                                    <table id="tblExamenesMedicos" class="display table table-striped table-bordered" style="width: 100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Doctor(a)</th>
+                                                <th>Tipo</th>
+                                                <th>Resultados</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="row">
+                        <div class="text-left mt-2">
+                            <button id="btnVolverExamenMedico" class="botonFlecha" type="button" tabindex="0"><i class="fas fa-arrow-left"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Agregar examen medico como imagen-->
+                <div class="card-body" id="cardPantallaExamenImagen">
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <form class="row d-flex justify-content-center align-items-center">
+                                <div class="file-upload">
+                                    <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Agregar un examen</button>
+
+                                    <div class="image-upload-wrap">
+                                        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                                        <div class="drag-text">
+                                            <h3>Arrastre y suelte una examen o seleccione agregar una examen</h3>
+                                        </div>
+                                    </div>
+                                    <div class="file-upload-content">
+                                        <img class="file-upload-image" src="#" alt="your image" />
+                                        <div class="image-title-wrap">
+                                            <button type="button" onclick="removeUpload()" class="remove-image">Eliminar<span class="image-title">Imagen subida</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 d-flex justify-content-center">
+                                    <div class="form-group">
+                                        <button id="btnCrearExamenesMedicosImg" type="button">Agregar examen</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <button id="btnAtrasImagenExamen" class="ms-3" type="button">
+                                            <i class="fas fa-arrow-left"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <!--Imagenes dinamicas-->
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                        <!-- Cambia modal-dialog a modal-xl para hacer el modal extra grande -->
+                        <div class="modal-content">
+                            <div class="modal-header" style="background-color: #0353A4;">
+                                <h5 class="modal-title text-white">Examen médico por imagen</h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="container justify-content-center align-items-center">
+                                    <img class="imgExamenMedico" src="#" alt="Alternate Text" style="width:100%; height:100%" />
+                                </div>
+                            </div>
+
+                            <div class="modal-footer justify-content-center align-items-center">
+                                <button type="button" class="btn fw-semibold" style="background-color:#f27474; color:white" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--NotasMedicas-->
+                <div class="card-body" id="cardNotasMedicas">
+                    <p style="font-size:26px" class="mb-3">Notas Médicas</p>
+                    <form id="formNotaMedica">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="slctNombreMedico">Nombre del Medico</label>
+                                            <select class="form-select me-2 border-2 selectSIMEPCI" id="slctNombreMedico">
+                                                <option value="-1"> Seleccione al Especialista </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtNotaMedica">NotaMedica</label>
+                                            <input type="text" class="form-control inputSIMEPCI" id="txtNotaMedica" placeholder="NotaMedica" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group mt-5">
+                                    <button id="btnAgregarNotasMedicas" class="btnSIMEPCI" type="button" style="margin-right: 10px">Agregar</button>
+                                    <button id="btnActualizarNotasMedicas" class="btnSIMEPCI" type="button" style="margin-right: 10px">Actualizar</button>
+                                    <button id="btnEliminarNotasMedicas" class="btnSIMEPCI" type="button" style="margin-right: 10px">Eliminar</button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- data table NotasMedicas-->
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                            <table id="tblNotasMedicas" class="display table table-striped table-bordered" style="width: 100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Doctor(a)</th>
+                                                        <th>Nota</th>
+                                                        <th>ID</th>
+                                                        <th>IdUsuarioDoctor</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="text-left mt-5">
+                            <button id="btnVolverNotaMedica" class="botonFlecha" type="button" tabindex="0"><i class="fas fa-arrow-left"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!--NotasEnfermeria-->
+                <div class="card-body" id="cardNotasEnfermeria">
+                    <p style="font-size:26px" class="mb-3">Notas Enfermería</p>
+                    <form id="formNotaEnfermeria">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="slctNombreEnfermero">Nombre del Medico</label>
+                                            <select class="form-select me-2 border-2 selectSIMEPCI" id="slctNombreEnfermero">
+                                                <option value="-1"> Seleccione al Especialista </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtNotaEnfermeria">NotaEnfermeria</label>
+                                            <input type="text" class="form-control inputSIMEPCI" id="txtNotaEnfermeria" placeholder="NotaEnfermeria" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group mt-5">
+                                    <button id="btnAgregarNotasEnfermeria" class="btnSIMEPCI" type="button" style="margin-right: 10px">Agregar</button>
+                                    <button id="btnActualizarNotasEnfermeria" class="btnSIMEPCI" type="button" style="margin-right: 10px">Actualizar</button>
+                                    <button id="btnEliminarNotasEnfermeria" class="btnSIMEPCI" type="button" style="margin-right: 10px">Eliminar</button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- data table NotasEnfermeria-->
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                            <table id="tblNotasEnfermeria" class="display table table-striped table-bordered" style="width: 100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Enfermero(a)</th>
+                                                        <th>Nota</th>
+                                                        <th>ID</th>
+                                                        <th>IdUsuarioEnfermero</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="text-left mt-5">
+                            <button id="btnVolverNotaEnfermeria" class="botonFlecha" type="button" tabindex="0"><i class="fas fa-arrow-left"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!--RegistroCitas-->
+                
+                <div class="card-body" id="cardRegistroCitas">
+                    <p style="font-size:26px" class="mb-3">Registro de Citas</p>
+                    <form id="formRegistroCita">
+                        <div class="row">
+                            <div class="col-md-5 align-items-center flex-column d-flex h-100">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtNombreDoctor">Nombre del Doctor</label>
+                                            <input type="text" class="form-control inputSIMEPCI" id="txtNombreDoctor" readonly />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtNombreSede">Nombre de la Sede</label>
+                                            <input type="text" class="form-control inputSIMEPCI" id="txtNombreSede" readonly />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtEspecialidad">Especialidad</label>
+                                            <input type="text" class="form-control inputSIMEPCI" id="txtEspecialidad" readonly />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtFechaCita">Fecha de la Cita</label>
+                                            <input type="datetime" class="form-control inputSIMEPCI" id="txtFechaCita" readonly />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <!-- data table RegistroCitas-->
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        
+                                            <table id="tblRegistroCitas" class="display table table-striped table-bordered" style="width: 100%">
+                                                <thead>
+                                                    <tr>                                                        
+                                                        <th>Doctor(a)</th>
+                                                        <th>Sede</th>
+                                                        <th>Especialidad</th>
+                                                        <th>Fecha</th>
+                                                        <th>IdCita</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        
+                                        <div class="row mt-4 justify-content-left">
+                                            <div class="col-lg-2">
+                                                <button id="btnRecetas" class="btnSIMEPCI" style="height:40px; width:110px" type="button">Recetas</button>
+                                            </div>
+                                            <div class="col-lg-2 ml-5">
+                                                <button id="btnDiagnosticos" class="btnSIMEPCI" style="height:40px; width:110px" type="button">Diagnósticos</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="text-left mt-2">
+                            <button id="btnVolverRegistroCita" class="botonFlecha" type="button" tabindex="0"><i class="fas fa-arrow-left"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!--Diagnosticos-->
+                <div class="card-body" id="cardDiagnosticos">
+                    <p style="font-size:26px" class="mb-3">Diagnósticos</p>
+                    <form id="formDiagnostico">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="slctNombreDoctorDiag">Nombre del Doctor</label>
+                                            <select class="form-select me-2 border-2 selectSIMEPCI" id="slctNombreDoctorDiag">
+                                                <option value="-1"> Seleccione al Especialista </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtNombreDiagnostico">Diagnóstico</label>
+                                            <input type="text" class="form-control inputSIMEPCI" id="txtNombreDiagnostico" placeholder="NombreDiagnostico" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtDescripcion">Descripción</label>
+                                            <input type="text" class="form-control inputSIMEPCI" id="txtDescripcion" placeholder="Descripcion" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtFechaDiagnostico">Fecha de Diagnóstico</label>
+                                            <input type="date" class="form-control inputSIMEPCI" id="txtFechaDiagnostico" placeholder="FechaDiagnostico" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <button id="btnAgregarDiagnosticos" class="btnSIMEPCI" type="button" style="margin-right: 10px">Agregar</button>
+                                    <button id="btnActualizarDiagnosticos" class="btnSIMEPCI" type="button" style="margin-right: 10px">Actualizar</button>
+                                    <button id="btnEliminarDiagnosticos" class="btnSIMEPCI" type="button" style="margin-right: 10px">Eliminar</button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-7">
+                                <!-- data table Diagnosticos-->
+                                <div class="row">
+                                    <div class="col-lg-12">                                        
+                                            <table id="tblDiagnosticos" class="display table table-striped table-bordered" style="width: 100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Doctor(a)</th>
+                                                        <th>Diagnóstico</th>
+                                                        <th>Descripción</th>
+                                                        <th>Fecha de Diagnóstico</th>
+                                                        <th>IdCita</th>
+                                                        <th>IdUsuarioDoctor</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="text-left mt-2">
+                            <button id="btnVolverDiagnostico" class="botonFlecha" type="button" tabindex="0"><i class="fas fa-arrow-left"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!--Recetas-->
+                <div class="card-body" id="cardRecetas">
+                    <p style="font-size:26px" class="mb-3">Recetas</p>
+                    <form id="formReceta">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="slctNombreDoctorRec">Nombre del Doctor</label>
+                                            <select class="form-select me-2 border-2 selectSIMEPCI" id="slctNombreDoctorRec">
+                                                <option value="-1"> Seleccione al Especialista </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtMedicamento">Medicamento</label>
+                                            <input type="text" class="form-control inputSIMEPCI" id="txtMedicamento" placeholder="Medicamento" readonly/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtDosificacion">Dosificación</label>
+                                            <input type="text" class="form-control inputSIMEPCI" id="txtDosificacion" placeholder="Dosificacion" readonly/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtIndicaciones">Indicaciones</label>
+                                            <input type="text" class="form-control inputSIMEPCI" id="txtIndicaciones" placeholder="Indicaciones" readonly/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="txtEmision">Emisión</label>
+                                            <input type="date" class="form-control inputSIMEPCI" id="txtEmision" placeholder="Emision" readonly/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8">
+                                <!-- data table Recetas-->
+                                <div class="row">
+                                    <div class="col-lg-12">                                       
+                                            <table id="tblRecetas" class="display table table-striped table-bordered" style="width: 100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Doctor(a)</th>
+                                                        <th>Medicamento</th>
+                                                        <th>Dosificación</th>
+                                                        <th>Indicaciones</th>
+                                                        <th>Emisión</th>
+                                                        <th>ImagenReceta</th>                                                        
+                                                    </tr>
+                                                </thead>
+                                            </table>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="text-left mt-2">
+                            <button id="btnVolverReceta" class="botonFlecha" type="button" tabindex="0"><i class="fas fa-arrow-left"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

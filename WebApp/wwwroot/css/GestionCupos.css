@@ -1,0 +1,30 @@
+﻿#btnAdelante {
+    background-color: #0353A4;
+    color: white;
+    border-radius: 5px;
+    height: 38px;
+    width: 38px;
+    margin-top: 1px;
+    border: none;
+}
+
+#slctIdCupo, #slctNombreDoctor, #slctNombreSede, #txtEspecialidad, #txtProvinciaSede, #txtHoraCupo, #slctEstado {
+    background-color: #ccdded;
+    border: none;
+}
+
+#btnAtras {
+    background-color: #0353A4;
+    color: white;
+    border-radius: 5px;
+    height: 38px;
+    width: 38px;
+    margin-top: 1px;
+    border: none;
+}
+
+.input-error {
+    background-color: #FFF4F4 !important;
+    box-shadow: 0px 0px 5px red;
+    border-color: red;
+}

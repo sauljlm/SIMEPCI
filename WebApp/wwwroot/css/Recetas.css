@@ -1,0 +1,52 @@
+﻿.botonFlecha {
+    background-color: #0353A4;
+    color: white;
+    border-radius: 5px;
+    height: 38px;
+    width: 38px;
+    margin-top: 1px;
+}
+
+#tblUsuario thead tr th {
+    background-color: #0353A4;
+    color: white;
+}
+
+#txtIdReceta, #txtMedicamento, #txtDosificacion, #txtIndicaciones {
+    background-color: #ccdded;
+    border: none;
+}
+
+#txtIdCita {
+    display: none;
+}
+
+#btnActualizar, #btnEliminar, #btnEliminarRecetaImagen {
+    background-color: #0353A4;
+    color: white;
+    border-radius: 5px;
+    height: 40px;
+    width: 88px;
+    margin-top: 1px;
+    border: none;
+}
+
+#btnAtrasEditar, #btnAtrasRecetaImagen {
+    background-color: #0353A4;
+    color: white;
+    border-radius: 5px;
+    height: 38px;
+    width: 38px;
+    border: none;
+    margin-top: 2px;
+}
+
+.input-error {
+    background-color: #FFF4F4 !important;
+    box-shadow: 0px 0px 5px red;
+    border-color: red;
+}
+
+.image-container:hover{
+    background-color: red; 
+}

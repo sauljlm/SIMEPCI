@@ -1,0 +1,26 @@
+﻿@page
+@model WebApp.Pages.ReporteCalidadModel
+@{
+}
+
+<link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
+<link href="~/css/ReporteCalidad.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
+<script src="~/js/pages/ReporteCalidad.js"></script>
+
+
+<h1>Reporte de calidad de servicio</h1>
+
+<body class="bodyReporte">
+    <div class="card-body col-lg-12">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-between">
+                <h3 class="card-title mr-3">Calificación promedio de Servicio</h3>
+                <select class="form-select col-auto col-3" id="select-service">
+                    <option value="">Seleccione un servicio</option>
+                </select>
+            </div>
+            <div id="reportes-container"></div>
+        </div>
+    </div>
+</body>

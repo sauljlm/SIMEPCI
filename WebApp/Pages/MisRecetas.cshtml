@@ -1,0 +1,30 @@
+﻿@page
+@model WebApp.Pages.MisRecetasModel
+@{
+}
+<script src="~/js/pages/misrecetas.js"></script>
+<h1>Mis Recetas</h1>
+<div id="misRecetas" class="row"></div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <!-- Cambia modal-dialog a modal-xl para hacer el modal extra grande -->
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #0353A4;">
+                <h5 class="modal-title text-white">Receta médica por imagen</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="container justify-content-center align-items-center">
+                    <img class="imgRecetaMedica" src="#" alt="Alternate Text" style="width:100%; height:100%" />
+                </div>
+            </div>
+
+            <div class="modal-footer justify-content-center align-items-center">
+                <button type="button" class="btn fw-semibold" style="background-color:#f27474; color:white" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

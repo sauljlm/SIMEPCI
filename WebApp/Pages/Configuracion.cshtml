@@ -1,0 +1,129 @@
+﻿@page
+@model WebApp.Pages.ConfiguracionModel
+@{
+}
+<link href="~/css/configuraciones.css" rel="stylesheet" />
+<script src="~/js/pages/configuracion.js"></script>
+<!-- Incluir el API de Google Maps -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKGNCQOxZn8lLXl_sjvWHhy28CQKtwRL8&callback=initMap"></script>
+
+<h1>Configuraciones</h1>
+<div class="card-body" id="usuarios2">
+    <form>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group" style="display: none;>
+                            <label for="txtId">Id</label>
+                            <input type="text" class="form-control" id="txtId" placeholder="Id" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtIdentificacion">Identificación</label>
+                            <input type="text" class="form-control" id="txtIdentificacion" placeholder="Ingrese la identificacion">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtNombre">Nombre</label>
+                            <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese el nombre">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtApellidoUno">Primer Apellido</label>
+                            <input type="text" class="form-control" id="txtApellidoUno" placeholder="Ingrese el apellido 1" >
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtApellidoDos">Segundo Apellido</label>
+                            <input type="text" class="form-control" id="txtApellidoDos" placeholder="Ingrese el apellido 2">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtTelefono">Teléfono</label>
+                            <input type="tel" class="form-control" id="txtTelefono" placeholder="Ingrese el telefono">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtCorreo">Correo</label>
+                            <input type="text" class="form-control" id="txtCorreo" placeholder="Ingresa el correo" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="slctSexo">Sexo</label>
+                            <select id="slctSexo" class="form-control">
+                                <option value="">Elije el sexo</option>
+                                <option value="M">Masculino</option>
+                                <option value="F">Femenino</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtFechaNacimiento">Fecha Nacimiento</label>
+                            <input type="date" class="form-control" id="txtFechaNacimiento" placeholder="Ingrese la fecha de nacimiento" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="txtFoto">Foto Usuario </label>
+                            <input type="file" class="form-control-file" id="txtFoto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Segunda Columna -->
+            <div class="col-md-6">
+                <div class="form-group mt-1">
+                    <label for="map">Selecciona la ubicación en el mapa:</label>
+                    <div id="map" style="height: 205px; border-radius: 10px;"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtLatitud">Latitud</label>
+                            <input type="text" class="form-control" id="txtLatitud" placeholder="Ingresa la latitud">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtLongitud">Longitud</label>
+                            <input type="text" class="form-control" id="txtLongitud" placeholder="Ingresa la longitud">
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-end">
+                    <div class="form-group">
+                        <button id="btnUpdate" type="button">Actualizar</button>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="botonFlecha ms-1" onclick="mostrarusuarios1()">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

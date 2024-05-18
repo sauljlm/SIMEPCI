@@ -1,0 +1,39 @@
+﻿@page
+@model WebApp.Pages.CheckoutModel
+@{
+
+}
+
+<script src="https://www.paypal.com/sdk/js?client-id=AfXs4aJNuC6TdeFz3G6Srvch2I70XM2TnHj0_LW7wz63yMKeZ7sDiYdZjIj1BI0KtIPuPUnOiuLFuP15&currency=USD"></script>
+
+
+
+<div class="p-6" >
+    <div class="mx-auto p-3 bg-light rounded border" style="width:420px;">
+        <h2 class="text-center mb-5">Completar tu orden</h2>
+        <div class="row nb-3">
+            <div class="col-5">Doctor</div>
+            <div class="col-7">@Model.Doctor</div>
+            <input type="hidden" id="doctorCheck" value="@Model.Doctor" />
+        </div>
+        <div class="row nb-3">
+            <div class="col-5">Especialidad</div>
+            <div class="col-7">@Model.Especialidad</div>
+            <input type="hidden" id="espemedic" value="@Model.Especialidad" />
+        </div>
+        <div class="row nb-3">
+            <div class="col-5">Total a pagar</div>
+            <div class="col-7">@(Model.Total)$</div>
+            <input type="hidden" id="total" value="@Model.Total" />
+        </div>
+        <input type="hidden" id="idcupo" value="@Model.IDcupo" />
+        <input type="hidden" id="idcita" value="@Model.IDcita" />
+        <input type="hidden" id="idimpuesto" value="@Model.IDimpuesto" />
+        <br/>
+
+        <div id="notificacion-container"></div>
+        <div id="paypal-button-container"></div>
+    </div>
+</div>
+
+<script src="~/js/pages/checkout.js"></script>

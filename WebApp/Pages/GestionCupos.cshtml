@@ -1,0 +1,141 @@
+﻿@page
+@model WebApp.Pages.GestionCuposModel
+@{
+}
+<!-- Datatables -->
+<link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
+<link href="~/css/gestioncupos.css" rel="stylesheet" />
+<script src="~/js/pages/gestioncupos.js"></script>
+
+<h1>Gestión de cupos</h1>
+
+<body>
+    <form id="formRegistro">
+        <fieldset>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-11">
+                        <div id="tarjeta">
+                            <div class="card-body" id="registro1">
+                                <div class="row mt-4">
+                                    <legend>Lista de Cupos</legend>
+                                    <div class="col-lg-12">
+                                        <table id="tblDisponibilidadCupo" class="display table table-striped table-bordered" style="width:100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" style="background-color: #0353A4;color: #0353A4;"></th>
+                                                        <th scope="col" style="background-color: #0353A4;color: white;">Id</th>
+                                                        <th scope="col" style="background-color: #0353A4;color: white;">idDoctor</th>
+                                                        <th scope="col" style="background-color: #0353A4;color: white;">Doctor</th>
+                                                        <th scope="col" style="background-color: #0353A4;color: white;">Apellido 1</th>
+                                                        <th scope="col" style="background-color: #0353A4;color: white;">Apellido 2</th>
+                                                        <th scope="col" style="background-color: #0353A4;color: white;">Especialidad</th>
+                                                        <th scope="col" style="background-color: #0353A4;color: white;">idSede</th>
+                                                        <th scope="col" style="background-color: #0353A4;color: white;">Sede</th>
+                                                        <th scope="col" style="background-color: #0353A4;color: white;">Provincia</th>
+                                                        <th scope="col" style="background-color: #0353A4;color: white;">distrito</th>
+                                                        <th scope="col" style="background-color: #0353A4;color: white;">canton</th>
+                                                        <th scope="col" style="background-color: #0353A4;color: white;">Cupo</th>
+                                                        <th scope="col" style="background-color: #0353A4;color: white;">Estado</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                    </div>
+                                </div>
+                                <div class="mt-3 text-left">
+                                    <!-- Agregamos la clase "text-right" para alinear a la derecha -->
+                                    <button id="btnAdelante" type="button">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- data table -->
+                            <div class="card-body" id="registro2">
+                                <form>
+                                    <div class="row justify-content-center align-items-center">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="slctIdCupo">Id Cupo</label>
+                                                    <select class="form-select" id="slctIdCupo">
+                                                        <option value="">Seleccione el id del cupo</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="slctNombreDoctor">Doctor</label>
+                                                    <select class="form-select" id="slctNombreDoctor">
+                                                        <option value="">Seleccione el nombre del doctor</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="slctNombreSede">Sede</label>
+                                                    <select class="form-select" id="slctNombreSede">
+                                                        <option value="">Seleccione el nombre de la sede</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="txtEspecialidad">Especialidad</label>
+                                                    <input type="text" class="form-control" id="txtEspecialidad" placeholder="Selecciona el nombre del doctor" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="txtProvinciaSede">Provincia</label>
+                                                    <input type="text" class="form-control" id="txtProvinciaSede" placeholder="Selecciona una sede" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="txtHoraCupo">Hora cupo</label>
+                                                    <input type="datetime-local" class="form-control" id="txtHoraCupo">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="slctEstado">Estado</label>
+                                                    <select class="form-select" id="slctEstado">
+                                                        <option value="">Seleccione el estado</option>
+                                                        <option value="DI">DI</option>
+                                                        <option value="AG">AG</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-md-12 d-flex justify-content-end">
+                                                <div class="form-group">
+                                                    <button id="btnUpdate" type="button">Actualizar</button>
+                                                    <button id="btnDelete" type="button">Eliminar</button>
+                                                </div>
+                                                <div class="form-group">
+                                                    <button id="btnAtras" class="ms-3" type="button">
+                                                        <i class="fas fa-arrow-left"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</body>

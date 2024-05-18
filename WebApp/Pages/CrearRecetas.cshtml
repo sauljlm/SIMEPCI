@@ -1,0 +1,149 @@
+﻿@page
+@model WebApp.Pages.CrearRecetasModel
+@{
+}
+<link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
+<link href="~/css/crearrecetas.css" rel="stylesheet" />
+<script src="~/js/pages/crearrecetas.js"></script>
+
+<h1>Crear Recetas</h1>
+<form class="formRegistro">
+    <fieldset>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-11">
+                    <div id="tarjeta">
+                        <div class="card-body" id="pantallaCitas">
+                            <div class="row mt-4">
+                                <legend>Lista de Citas</legend>
+                                <div class="col-lg-12">
+                                    <table id="tblCitas" class="display table table-striped table-bordered" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th style="color: #0353A4"></th>
+                                                <th scope="col">HoraCupo</th>
+                                                <th scope="col">Id</th>
+                                                <th scope="col">idDoctor</th>
+                                                <th scope="col">idDisponibilidadCupo</th>
+                                                <th scope="col">idExpediente</th>
+                                                <th scope="col">Doctor</th>
+                                                <th scope="col">apellidoUnoDoctor</th>
+                                                <th scope="col">apellidoDosDoctor</th>
+                                                <th scope="col">Especialidad</th>
+                                                <th scope="col">Paciente</th>
+                                                <th scope="col">apellidoUnoPaciente</th>
+                                                <th scope="col">apellidoDosPaciente</th>
+                                                <th scope="col">Sede</th>
+                                                <th scope="col">Provincia</th>
+                                                <th scope="col">Distrito</th>
+                                                <th scope="col">Canton</th>
+                                                <th scope="col">otrasSennas</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <!-- Agregamos la clase "text-right" para alinear a la derecha -->
+                                <button id="btnAdelante" type="button">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- data table -->
+                        <div class="card-body" id="pantallaRecetaManual">
+                            <form class="d-flex justify-content-center align-items-center">
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="row justify-content-center align-items-center">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="txtIdCita">Cita</label>
+                                                    <input type="text" class="form-control" id="txtIdCita" placeholder="Selecciona id de la cita" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="txtMedicamento">Medicamento</label>
+                                                    <input type="text" class="form-control" id="txtMedicamento" placeholder="Digite el medicamento">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="txtDosificacion">Dosificación</label>
+                                                    <input type="number" class="form-control" id="txtDosificacion" placeholder="Digite la dosificación">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="txtIndicaciones">Indicaciones</label>
+                                                    <input type="text" class="form-control" id="txtIndicaciones" placeholder="Digite las indicaciones">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-md-4 d-flex justify-content-start">
+                                            <div class="form-group">
+                                                <button id="btnRecetaImagen" type="button">Receta Imagen</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8 d-flex justify-content-end">
+                                            <div class="form-group">
+                                                <button id="btnCrear" type="button">Crear</button>
+                                            </div>
+                                            <div class="form-group">
+                                                <button id="btnAtras" class="ms-3" type="button">
+                                                    <i class="fas fa-arrow-left"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- data table -->
+                        <div class="card-body" id="pantallaRecetaImagen">
+                            <form class="row d-flex justify-content-center align-items-center">
+                                <div class="file-upload">
+                                    <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Agregar una receta</button>
+
+                                    <div class="image-upload-wrap">
+                                        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                                        <div class="drag-text">
+                                            <h3>Arrastre y suelte una receta o seleccione agregar una receta</h3>
+                                        </div>
+                                    </div>
+                                    <div class="file-upload-content">
+                                        <img class="file-upload-image" src="#" alt="your image" />
+                                        <div class="image-title-wrap">
+                                            <button type="button" onclick="removeUpload()" class="remove-image">Eliminar<span class="image-title">Imagen subida</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 d-flex justify-content-center de tn ">
+                                    <div class="form-group">
+                                        <button id="btnCrearImagen" type="button">Crear</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <button id="btnAtrasImagen" class="ms-3" type="button">
+                                            <i class="fas fa-arrow-left"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</form>
